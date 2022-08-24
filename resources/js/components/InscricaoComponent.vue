@@ -4,64 +4,165 @@
             <div class="row">
                 <div class="col-lg-10">
                     <!-- @submit.stop.prevent="registrar()" -->
-                    <form action="">
+                    <form>
+                        <!-- NOME COMPLETO ------------------------------------------------------------ -->
                         <div class="form-group">
-                            <!-- row cabeçalho ----------------------------------------------  -->
+                            <label for="nome">Nome Completo</label>
+                            <span
+                                v-if="v$.entidade.NOME.$invalid"
+                                style="color: red"
+                            >
+                                *Obrigatório</span
+                            ><br />
+                            <input
+                                v-model="entidade.NOME"
+                                type="text"
+                                class="form-control form-control-md"
+                                :class="{
+                                    'is-invalid': v$.entidade.NOME.$error,
+                                }"
+                                id="nome"
+                                placeholder="Nome"
+                            />
+                        </div>
+                        <!-- CPF ----------------------------------------------------------------------------- -->
+                        <div class="form-group">
+                            <label for="cpf">CPF</label>
+                            <span
+                                v-if="v$.entidade.CPF.$invalid"
+                                style="color: red"
+                            >
+                                *Obrigatório</span
+                            >
 
-                            <div class="row mb-3">
-                                <div class="col-sm-8 col-md-8 col-lg-8">
-                                    <label for="nome">Nome Completo</label>
-                                    <span
-                                        v-if="v$.entidade.NOME.$invalid"
-                                        style="color: red"
-                                    >
-                                        *Obrigatório</span
-                                    ><br />
-                                    <input
-                                        v-model="entidade.NOME"
-                                        type="text"
-                                        class="form-control form-control-md"
-                                        :class="{
-                                            'is-invalid':
-                                                v$.entidade.NOME.$error,
-                                        }"
-                                        id="nome"
-                                        placeholder="Nome"
-                                    />
-                                </div>
-
-                                <div class="col-sm-8 col-md-8 col-lg-8">
-                                    <label for="nome">CPF</label>
-                                    <span
-                                        v-if="v$.entidade.CPF.$invalid"
-                                        style="color: red"
-                                    >
-                                        *Obrigatório</span
-                                    ><br />
-
-                                    <input
-                                        v-model="entidade.CPF"
-                                        v-mask="'###.###.###-##'"
-                                        type="text"
-                                        class="form-control form-control-md"
-                                        :class="{
-                                            'is-invalid':
-                                                v$.entidade.CPF.$error,
-                                        }"
-                                        id="CPF"
-                                        placeholder="Ex.: 000.000.000-00"
-                                    />
-                                    <small v-if="v$.entidade.CPF.$error">
-                                        {{
-                                            v$.entidade.CPF.$errors[0].$message
-                                        }}
-                                    </small>
-                                </div>
-                            </div>
-
-                            <!-- fim row cabeçalho ----------------------------------------------  -->
+                            <input
+                                v-model="entidade.CPF"
+                                v-mask="'###.###.###-##'"
+                                type="text"
+                                class="form-control form-control-md"
+                                :class="{
+                                    'is-invalid': v$.entidade.CPF.$error,
+                                }"
+                                id="cpf"
+                                placeholder="Ex.: 000.000.000-00"
+                            />
+                            <small v-if="v$.entidade.CPF.$error">
+                                {{ v$.entidade.CPF.$errors[0].$message }}
+                            </small>
                         </div>
 
+                        <!-- RG ----------------------------------------------------------------------------- -->
+                        <div class="form-group">
+                            <label for="rg">RG</label>
+                            <span
+                                v-if="v$.entidade.RG.$invalid"
+                                style="color: red"
+                            >
+                                *Obrigatório</span
+                            >
+
+                            <input
+                                v-model="entidade.RG"
+                                type="txt"
+                                class="form-control form-control-md"
+                                :class="{
+                                    'is-invalid': v$.entidade.RG.$error,
+                                }"
+                                id="rg"
+                                placeholder="RG"
+                            />
+                        </div>
+
+                        <!-- IDADE ----------------------------------------------------------------------------- -->
+
+                        <div class="form-group">
+                            <label for="idade">Idade</label>
+                            <span
+                                v-if="v$.entidade.IDADE.$invalid"
+                                style="color: red"
+                            >
+                                *Obrigatório</span
+                            >
+
+                            <input
+                                v-model="entidade.IDADE"
+                                type="text"
+                                class="form-control form-control-md"
+                                :class="{
+                                    'is-invalid': v$.entidade.IDADE.$error,
+                                }"
+                                id="idade"
+                                v-mask="'###'"
+                                placeholder="Idade"
+                            />
+                        </div>
+                        <!-- TELEFONE ----------------------------------------------------------------------------- -->
+
+                        <div class="form-group">
+                            <label for="telefone">Telefone</label>
+                            <span
+                                v-if="v$.entidade.TELEFONE.$invalid"
+                                style="color: red"
+                            >
+                                *Obrigatório</span
+                            >
+
+                            <input
+                                v-model="entidade.TELEFONE"
+                                type="text"
+                                class="form-control form-control-md"
+                                :class="{
+                                    'is-invalid': v$.entidade.TELEFONE.$error,
+                                }"
+                                id="telefone"
+                                placeholder="Ex: (99) 99999-9999"
+                                v-mask="'(##) #####-####'"
+                            />
+                        </div>
+                        <!-- EMAIL ----------------------------------------------------------------------------- -->
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <span
+                                v-if="v$.entidade.EMAIL.$invalid"
+                                style="color: red"
+                            >
+                                *Obrigatório</span
+                            >
+
+                            <input
+                                v-model="entidade.EMAIL"
+                                type="email"
+                                class="form-control form-control-md"
+                                :class="{
+                                    'is-invalid': v$.entidade.EMAIL.$error,
+                                }"
+                                id="email"
+                                placeholder="Email"
+                            />
+                        </div>
+                        <!-- POSSUIBICICLETA ----------------------------------------------------------------------------- -->
+
+                        <div class="form-group">
+                            <label>Possui Bicicleta?</label>
+                            <span
+                                v-if="v$.entidade.POSSUIBIKE.$invalid"
+                                style="color: red"
+                            >
+                                *Obrigatório</span
+                            >
+
+                            <select
+                                v-model="entidade.POSSUIBIKE"
+                                class="custom-select"
+                            >
+                                <option disabled value="">Selecione</option>
+                                <option value="1">Sim</option>
+                                <option value="2">Não</option>
+                            </select>
+                        </div>
+
+                        <!-- BOTAO ----------------------------------------------------------------------------- -->
                         <div class="card-footer">
                             <button
                                 v-on:click.stop.prevent="salvarAtualizar()"
@@ -76,13 +177,13 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- <p v-for="error of v$.entidade.CPF.$errors" :key="error.$uid">
+    <!-- <p v-for="error of v$.entidade.CPF.$errors" :key="error.$uid">
             <pre>{{ v$.entidade.CPF }}</pre>
             <pre>{{ error }}</pre>
             <strong>{{ error.$message }}</strong>
         </p> -->
-    </div>
 </template>
 
 <script>
@@ -143,12 +244,12 @@ export default {
                         validarCPF
                     ),
                 },
-                /*RG: { required },
+                RG: { required },
                 IDADE: { required },
                 TELEFONE: { required },
                 EMAIL: "",
                 POSSUIBIKE: { required },
-                PRATICAESPORTE: { required },
+                /*PRATICAESPORTE: { required },
                 SEXO: { required },*/
             },
         };
