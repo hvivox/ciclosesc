@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin/inscricao', function () {
     return view('lista-inscritos-ciclosesc');
+});
+
+
+Route::get('/', function () {
+    return view('inscricao');
 });

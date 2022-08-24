@@ -21,8 +21,12 @@ const app = createApp({});
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
 
-import ListaInscritos from './components/ListaInscritos.vue';
-app.component('lista-inscritos-component', ListaInscritos);
+import ListaInscritosComponent from './components/ListaInscritosComponent.vue';
+app.component('lista-inscritos-component', ListaInscritosComponent);
+
+import InscricaoComponent from './components/InscricaoComponent.vue';
+app.component('inscricao-component', InscricaoComponent);
+
 
 // axios.defaults.withCredentials = true;// todas as paginas irão ficar cm credencial = true
 // Axios.defaults.baseURL = 'http://127.0.0.1:8000';

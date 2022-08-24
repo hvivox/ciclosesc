@@ -28,5 +28,9 @@
         "vite": "^3.0.0",
         "vue": "^3.2.37",
         "vue-loader": "^16.2.0"
+    },
+    "dependencies": {
+        "@vuelidate/core": "^2.0.0-alpha.44",
+        "@vuelidate/validators": "^2.0.0-alpha.31"
     }
 }
