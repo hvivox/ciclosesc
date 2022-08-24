@@ -20,80 +20,11 @@
 <body>
     <div id="app">
 
-        @auth
-            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-                <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="{{ __('Toggle navigation') }}">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-
-                            {{-- @auth --}}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('folha') }}">folha</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">ordem</a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">teste01</a>
-                                    <a class="dropdown-item" href="#">teste02</a>
-
-                                </div>
-                            </li>
-                            {{-- @endauth --}}
-
-                        </ul>
-
-                        <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->USUARIO }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                        class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-
-
-            <!-- BREAD GRUMP ------------------------------------------------------------------------------------------     -->
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"> {{ Route::currentRouteName() }}</li>
-                </ol>
-            </nav>
-        @endauth
-
-        <main class="py-4">
-
+        <div class="container">
             @yield('content')
-        </main>
+        </div>
+
+
     </div>
 </body>
 

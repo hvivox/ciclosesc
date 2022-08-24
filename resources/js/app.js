@@ -10,6 +10,8 @@ import { Axios } from 'axios';
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'font-awesome/css/font-awesome.min.css'
+
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -17,6 +19,9 @@ import 'font-awesome/css/font-awesome.min.css'
  */
 
 const app = createApp({});
+
+import VueTheMask from 'vue-the-mask'
+app.use(VueTheMask);
 
 import ExampleComponent from './components/ExampleComponent.vue';
 app.component('example-component', ExampleComponent);
@@ -26,6 +31,9 @@ app.component('lista-inscritos-component', ListaInscritosComponent);
 
 import InscricaoComponent from './components/InscricaoComponent.vue';
 app.component('inscricao-component', InscricaoComponent);
+
+
+
 
 
 // axios.defaults.withCredentials = true;// todas as paginas irão ficar cm credencial = true

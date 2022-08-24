@@ -3,11 +3,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-10">
-                    <form action="" @submit.stop.prevent="registrar()">
+                    <!-- @submit.stop.prevent="registrar()" -->
+                    <form action="">
                         <div class="form-group">
                             <!-- row cabeçalho ----------------------------------------------  -->
+
                             <div class="row mb-3">
-                                <div class="col-sm-9 col-md-9 col-lg-9">
+                                <div class="col-sm-8 col-md-8 col-lg-8">
                                     <label for="nome">Nome Completo</label>
                                     <span
                                         v-if="v$.entidade.NOME.$invalid"
@@ -18,7 +20,7 @@
                                     <input
                                         v-model="entidade.NOME"
                                         type="text"
-                                        class="form-control form-control-lg"
+                                        class="form-control form-control-md"
                                         :class="{
                                             'is-invalid':
                                                 v$.entidade.NOME.$error,
@@ -28,35 +30,32 @@
                                     />
                                 </div>
 
-                                <div
-                                    class="form-group col-xs-4 col-sm-3 pull-right"
-                                >
-                                    <label
-                                        for="dataRealizacao"
-                                        class="control-label"
-                                        >Data Criação</label
-                                    >
+                                <div class="col-sm-8 col-md-8 col-lg-8">
+                                    <label for="nome">CPF</label>
                                     <span
-                                        v-if="
-                                            v$.entidade.DTAREALIZACAO.$invalid
-                                        "
+                                        v-if="v$.entidade.CPF.$invalid"
                                         style="color: red"
                                     >
                                         *Obrigatório</span
                                     ><br />
+
                                     <input
-                                        id="dataRealizacao"
-                                        type="date"
-                                        name="dataRealizacao"
-                                        class="form-control"
+                                        v-model="entidade.CPF"
+                                        v-mask="'###.###.###-##'"
+                                        type="text"
+                                        class="form-control form-control-md"
                                         :class="{
                                             'is-invalid':
-                                                v$.entidade.DTAREALIZACAO
-                                                    .$error,
+                                                v$.entidade.CPF.$error,
                                         }"
-                                        v-model="entidade.DTAREALIZACAO"
-                                        required="required"
+                                        id="CPF"
+                                        placeholder="Ex.: 000.000.000-00"
                                     />
+                                    <small v-if="v$.entidade.CPF.$error">
+                                        {{
+                                            v$.entidade.CPF.$errors[0].$message
+                                        }}
+                                    </small>
                                 </div>
                             </div>
 
@@ -77,13 +76,19 @@
                 </div>
             </div>
         </div>
+
+        <!-- <p v-for="error of v$.entidade.CPF.$errors" :key="error.$uid">
+            <pre>{{ v$.entidade.CPF }}</pre>
+            <pre>{{ error }}</pre>
+            <strong>{{ error.$message }}</strong>
+        </p> -->
     </div>
 </template>
 
 <script>
 import axios from "axios";
 import useVuelidate from "@vuelidate/core";
-import { required, minLength, between } from "@vuelidate/validators";
+import { required, minLength, between, helpers } from "@vuelidate/validators";
 export default {
     data() {
         return {
@@ -91,22 +96,81 @@ export default {
             v$: useVuelidate({ $autoDirty: true }),
             entidade: {
                 NOME: "",
-                NOTADIA: "",
-                DTAREALIZACAO: "",
-                OBSERVACAO: "",
+                CPF: "",
+                RG: "",
+                IDADE: "",
+                TELEFONE: "",
+                EMAIL: "",
+                POSSUIBIKE: "",
+                PRATICAESPORTE: "",
+                SEXO: "",
             },
             errorMsg: "",
         };
     },
+    computed: {
+        isTemAlgumCampoInvalidoNoFormulario() {
+            return this.v$.$invalid;
+        },
+    },
+    methods: {
+        salvarAtualizar() {
+            this.v$.$validate();
+            if (!this.v$.$error) {
+                alert("Form submetido com sucesso");
+            } else {
+                alert("FORM COM FALHA");
+            }
+            //this.v$.$touch();
+        },
 
-    methods: {},
+        registrar() {
+            alert("gravando cadastro");
+        },
+    },
+
     validations() {
         return {
             entidade: {
                 NOME: { required },
-                DTAREALIZACAO: { required },
+                CPF: {
+                    required: helpers.withMessage(
+                        "*Campo Obrigatório!",
+                        required
+                    ),
+                    validarCPF: helpers.withMessage(
+                        "*CPF inválido!",
+                        validarCPF
+                    ),
+                },
+                /*RG: { required },
+                IDADE: { required },
+                TELEFONE: { required },
+                EMAIL: "",
+                POSSUIBIKE: { required },
+                PRATICAESPORTE: { required },
+                SEXO: { required },*/
             },
         };
     },
+};
+
+const validarCPF = function (cpf) {
+    cpf = cpf.replace(/\D/g, "");
+    if (cpf.toString().length != 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+    var result = true;
+    [9, 10].forEach(function (j) {
+        var soma = 0,
+            r;
+        cpf.split(/(?=)/)
+            .splice(0, j)
+            .forEach(function (e, i) {
+                soma += parseInt(e) * (j + 2 - (i + 1));
+            });
+        r = soma % 11;
+        r = r < 2 ? 0 : 11 - r;
+        if (r != cpf.substring(j, j + 1)) result = false;
+    });
+    return result;
 };
 </script>

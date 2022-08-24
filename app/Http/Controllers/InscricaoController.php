@@ -10,6 +10,7 @@ class InscricaoController extends Controller
 {
     function lista()
     {
+
         $lista = Inscricao::all();
         /* foreach (Inscricao::all() as $inscrito) {
             echo $inscrito->nome . '<br>';
@@ -24,10 +25,6 @@ class InscricaoController extends Controller
         }
 
         return response()->json($lista, 200);
-
-
-
-        // echo "passou consumindo URI";
     }
 
 
