@@ -32,7 +32,8 @@ app.component('lista-inscritos-component', ListaInscritosComponent);
 import InscricaoComponent from './components/InscricaoComponent.vue';
 app.component('inscricao-component', InscricaoComponent);
 
-
+import InscricaoConcluidaComponent from './components/InscricaoConcluidaComponent.vue';
+app.component('inscricao-concluida-component', InscricaoConcluidaComponent);
 
 
 

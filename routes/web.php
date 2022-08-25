@@ -21,3 +21,16 @@ Route::get('/admin/inscricao', function () {
 Route::get('/', function () {
     return view('inscricao');
 });
+
+Route::get('/inscricao-concluida', function () {
+    return view('inscricao-concluida');
+});
+
+
+
+Route::get('inscricao', [App\Http\Controllers\InscricaoController::class, 'lista'])
+    ->name('lista');
+
+
+Route::post('inscricao', [App\Http\Controllers\InscricaoController::class, 'salvar'])
+    ->name('salvar');

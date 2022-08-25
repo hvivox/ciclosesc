@@ -15,21 +15,34 @@ class Inscricao extends Model
     public $incrementing = true;
 
     protected $fillable = [
-        'NOME', 'RG', 'IDADE', 'TELEFONE', 'EMAIL', 'POSSUIBIKE',
-        'PRATICAESPORTE', 'SEXO'
+        'CICLONOME',
+        'CICLOCPF',
+        'CICLOIDADE',
+        'CICLOTELEFONE',
+        'CICLOEMAIL',
+        'CICLOBIKE',
+        'CICLOESPORTE',
+        'CICLOSEXO',
+        'CICLOEQUIPAMENTO',
+        'CICLOPARTICIPOU',
+        'CICLOAPTO',
+        'CICLOSABENDO'
     ];
 
     public function rules()
     {
         return array(
-            'NOME' => ['required', 'string', 'max:200'],
-            'RG' => ['required', 'string', 'max:200'],
-            'IDADE' => ['required', 'int', 'max:3'],
-            'TELEFONE' => ['required', 'string', 'max:15'],
-            'EMAIL' => ['required', 'string', 'max:200'],
-            'POSSUIBIKE' => ['required', 'boolean'],
-            'PRATICAESPORTE' => ['required', 'boolean'],
-            'SEXO' => ['required', 'regex:/^[a-zA-Z]+$']
+            "CICLONOME" => ['required', 'string', 'max:200'],
+            "CICLOCPF" => ['required', 'string', 'max:20'],
+            "CICLOIDADE" => ['required', 'int', 'max:100'],
+            "CICLOTELEFONE" => ['required', 'string', 'max:15'],
+            "CICLOBIKE" => ['required', 'string', 'max:15'],
+            "CICLOESPORTE" => ['required', 'string', 'max:15'],
+            "CICLOSEXO" => ['required', 'string', 'max:15'],
+            "CICLOEQUIPAMENTO" => ['required', 'string', 'max:15'],
+            "CICLOPARTICIPOU" => ['required', 'string', 'max:15'],
+            "CICLOAPTO" => ['required', 'string', 'max:15'],
+            "CICLOSABENDO" => ['required', 'string', 'max:2'],
         );
     }
 
@@ -37,16 +50,22 @@ class Inscricao extends Model
     public function niceName()
     {
         return array(
-            'NOME' => 'Nome',
-            'RG' => 'RG',
-            'IDADE' => 'Idade',
-            'TELEFONE' => 'Telefone',
-            'EMAIL' => 'Email',
-            'POSSUIBIKE' => 'Possui bicicleta',
-            'PRATICAESPORTE' => 'Pratica Esportes',
-            'SEXO' => 'Sexo'
+            'CICLONOME' => 'Nome',
+            'CICLOCPF' => 'CPF',
+            'CICLOIDADE' => 'Idade',
+            "CICLOSEXO" => "Sexo",
+            'CICLOTELEFONE' => 'Telefone',
+            'CICLOEMAIL' => 'Email',
+            'CICLOBIKE' => 'Possui bicicleta',
+            "CICLOEQUIPAMENTO" => "Possui equipamento",
+            "CICLOPARTICIPOU" => "Participou de outra edição",
+            'CICLOSABENDO' => 'Como ficou sabendo',
+            'CICLOAPTITO' => 'Declara estar apto',
+            'CICLOESPORTE' => 'Pratica Esportes',
+
         );
     }
+
 
 
 

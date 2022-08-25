@@ -38,7 +38,7 @@ class InscricaoController extends Controller
         $inscricao = new Inscricao();
         $dados = $request->input();
 
-        dd($dados);
+        //dd($dados);
 
         $validator = Validator::make($dados, $inscricao->rules(),  [], $inscricao->niceName());
 

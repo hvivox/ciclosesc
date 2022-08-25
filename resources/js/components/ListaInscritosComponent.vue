@@ -18,13 +18,13 @@
                         <tbody>
                             <tr v-for="(entidade, index) in listaEntidades">
                                 <th cod="row">
-                                    {{ entidade.codigo }}
+                                    {{ entidade.ID }}
                                 </th>
                                 <td>
-                                    {{ entidade.nome }}
+                                    {{ entidade.CICLONOME }}
                                 </td>
                                 <td>
-                                    {{ entidade.rg }}
+                                    {{ entidade.CICLOCPF }}
                                 </td>
 
                                 <td class="botao-acao">
@@ -81,9 +81,10 @@ export default {
     },
     methods: {
         carregarLista() {
+            let url = "/inscricao";
             axios
                 // .get(" https://jsonplaceholder.typicode.com/posts ")
-                .get("/api/inscricao")
+                .get(url)
                 .then((response) => {
                     this.listaEntidades = response.data;
                     console.log(this.listaEntidades);
