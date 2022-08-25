@@ -10,7 +10,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">NOME</th>
-                                <th scope="col">SEXO</th>
+                                <th scope="col">CPF</th>
                                 <th scope="col">AÇÃO</th>
                             </tr>
                         </thead>
@@ -24,7 +24,7 @@
                                     {{ entidade.nome }}
                                 </td>
                                 <td>
-                                    {{ entidade.sexo }}
+                                    {{ entidade.rg }}
                                 </td>
 
                                 <td class="botao-acao">

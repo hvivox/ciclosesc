@@ -157,8 +157,50 @@
                                 class="custom-select"
                             >
                                 <option disabled value="">Selecione</option>
-                                <option value="1">Sim</option>
-                                <option value="2">Não</option>
+                                <option value="S">Sim</option>
+                                <option value="N">Não</option>
+                            </select>
+                        </div>
+
+                        <!-- POSSUIBICICLETA ----------------------------------------------------------------------------- -->
+
+                        <div class="form-group">
+                            <label>Pratica Atividade Física?</label>
+                            <span
+                                v-if="v$.entidade.PRATICAESPORTE.$invalid"
+                                style="color: red"
+                            >
+                                *Obrigatório</span
+                            >
+
+                            <select
+                                v-model="entidade.PRATICAESPORTE"
+                                class="custom-select"
+                            >
+                                <option disabled value="">Selecione</option>
+                                <option value="S">Sim</option>
+                                <option value="N">Não</option>
+                            </select>
+                        </div>
+
+                        <!-- POSSUIBICICLETA ----------------------------------------------------------------------------- -->
+
+                        <div class="form-group">
+                            <label>Sexo</label>
+                            <span
+                                v-if="v$.entidade.SEXO.$invalid"
+                                style="color: red"
+                            >
+                                *Obrigatório</span
+                            >
+
+                            <select
+                                v-model="entidade.SEXO"
+                                class="custom-select"
+                            >
+                                <option disabled value="">Selecione</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
                             </select>
                         </div>
 
@@ -218,7 +260,37 @@ export default {
         salvarAtualizar() {
             this.v$.$validate();
             if (!this.v$.$error) {
-                alert("Form submetido com sucesso");
+                let url = "/api/inscricao";
+
+                axios
+                    .post(url, this.entidade)
+                    .then((json) => {
+                        console.log(json);
+                        //sucesso
+                        this.loading = true;
+                        this.msgSucesso =
+                            "Usuário logado com sucesso, aguarde...";
+
+                        location.href = "home";
+                        //envia a requisição para destino
+                        // e.target.submit();
+                        //next({ path: '/home' });
+                    })
+                    .catch((error) => {
+                        //error
+                        this.msgAviso = error.response.data.mensagem;
+                        //console.log(error.response.data.mensagem);
+                        this.entidade = {};
+                        //console.log(error.response.status);
+                        //console.log(error.response.headers);
+                    })
+                    .finally(() => {
+                        this.loading = false;
+                        this.isBotaoEntrarInativo = false;
+                        if (this.msgSucesso) {
+                            this.isBotaoEntrarInativo = true;
+                        }
+                    });
             } else {
                 alert("FORM COM FALHA");
             }
@@ -249,8 +321,8 @@ export default {
                 TELEFONE: { required },
                 EMAIL: "",
                 POSSUIBIKE: { required },
-                /*PRATICAESPORTE: { required },
-                SEXO: { required },*/
+                PRATICAESPORTE: { required },
+                SEXO: { required },
             },
         };
     },

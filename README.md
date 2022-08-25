@@ -19,6 +19,9 @@ Sistema de cadastro de inscrições do maior evento ciclistico da região norte
 ## Antes de por em produção deve-se rodar o comando para compilar fonts do vuejs
 *  npm run build
 
+
+
+
 ## Executar a aplicação em desenvolvimento
 *  php artisan serve
 *  npm run watch (alguns momentos é necessário sair e entrar nesse comando para recompilar corretamente)
