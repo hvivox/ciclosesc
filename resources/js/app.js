@@ -6,10 +6,10 @@
 
 import './bootstrap';
 import { createApp } from 'vue';
-import { Axios } from 'axios';
+//import { Axios } from 'axios';
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'font-awesome/css/font-awesome.min.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 
 /**
@@ -38,7 +38,7 @@ app.component('inscricao-concluida-component', InscricaoConcluidaComponent);
 
 
 // axios.defaults.withCredentials = true;// todas as paginas irão ficar cm credencial = true
-// Axios.defaults.baseURL = 'http://127.0.0.1:8000';
+//Axios.defaults.baseURL = 'http://localhost:92/ciclosesc';
 
 
 /**

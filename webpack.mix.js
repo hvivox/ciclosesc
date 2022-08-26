@@ -16,8 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
     .vue()
     .sass('resources/sass/app.scss', 'public/css');
 mix.disableSuccessNotifications();
-    //utilizado para acrescentar os arquivos na compilação / sourceMaps
-    // mix.js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps();
-    //mix.copy('node_modules/font-awesome/fonts', 'public/fonts');
+//utilizado para acrescentar os arquivos na compilação / sourceMaps
+// mix.js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps();
+//mix.copy('node_modules/@font-awesome/fonts', 'public/fonts');
     // mix.js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps();
 

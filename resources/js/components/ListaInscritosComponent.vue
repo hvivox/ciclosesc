@@ -31,9 +31,7 @@
                                     <button
                                         class="btn btn-info"
                                         title="Editar"
-                                        v-on:click="
-                                            direcionaParaEdicao(entidade)
-                                        "
+                                        v-on:click="direcionaParaEdicao(entidade)"
                                     >
                                         <i class="fa fa-edit"></i>
                                     </button>
@@ -45,9 +43,7 @@
                                         class="btn bt-sm btn-danger float-right"
                                         data-toggle="modal"
                                         data-target="#exampleModal02"
-                                        v-on:click="
-                                            preparaRemocao(entidade, index)
-                                        "
+                                        v-on:click="preparaRemocao(entidade, index)"
                                     >
                                         <i class="fa fa-minus-circle"></i>
                                     </button>
@@ -76,12 +72,14 @@ export default {
             isLoading: true,
         };
     },
+
     mounted() {
         this.carregarLista();
     },
     methods: {
         carregarLista() {
-            let url = "/inscricao";
+            let url = APP_URL + "/api/inscricao";
+
             axios
                 // .get(" https://jsonplaceholder.typicode.com/posts ")
                 .get(url)

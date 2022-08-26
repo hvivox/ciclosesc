@@ -11,9 +11,13 @@ export default defineConfig({
             ],
             refresh: true,
         }),
+
         vue({
             template: {
                 transformAssetUrls: {
+                    /* base: process.env.NODE_ENV === 'production'
+                         ? '/dist/' // prod
+                         : '/', // dev*/
                     base: null,
                     includeAbsolute: false,
                 },

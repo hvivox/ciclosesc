@@ -17,8 +17,9 @@ Sistema de cadastro de inscrições do maior evento ciclistico da região norte
 * rodar o comando php artisan key:generate
 
 ## Antes de por em produção deve-se rodar o comando para compilar fonts do vuejs
-*  npm run build
-
+* npm run watch 
+* npm run build (este comando depende do npm run watch rodando)
+* desabilitar APP_DEBUG=true do .env
 
 
 
