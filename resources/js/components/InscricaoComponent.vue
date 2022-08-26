@@ -507,7 +507,7 @@ export default {
                         this.isloading = false;
                     });
             } else {
-                alert("FORM COM FALHA");
+                alert("Campos obrigatórios pendentes");
             }
             //this.v$.$touch();
         },
