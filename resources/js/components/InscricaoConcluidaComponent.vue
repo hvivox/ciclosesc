@@ -15,16 +15,17 @@
                         <!--Subtitle-->
                         <p class="mt-4">
                             <strong
-                                >Sua pré-inscrição foi realizada com
-                                sucesso!</strong
+                                >Sua pré-inscrição foi submetida para
+                                validação!</strong
                             >
                         </p>
 
                         <!--Text-->
                         <div class="d-flex justify-content-center">
                             <p class="card-text my-2" style="max-width: 43rem">
-                                A confirmação dos inscritos será feita por meio
-                                do publicação no portal do sesc.
+                                A lista dos inscritos aprovados será pubilcada
+                                no portal do Sesc conforme as orientações
+                                apresentadas na pré-inscrição.
                             </p>
                         </div>
 
