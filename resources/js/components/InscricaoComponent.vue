@@ -775,13 +775,12 @@ export default {
             this.v$.$validate();
             if (!this.v$.$error) {
                 this.isloading = true;
-                let url = "/inscricao";
 
+                let url = "/inscricao";
                 axios
                     .post(url, this.entidade)
-                    .then((json) => {
+                    .then((response) => {
                         //sucesso
-
                         location.href = "inscricao-concluida";
                         //this.loading = true;
                         //next({ path: '/home' });
