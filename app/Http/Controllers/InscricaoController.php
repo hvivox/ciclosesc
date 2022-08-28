@@ -47,6 +47,7 @@ class InscricaoController extends Controller
         }
 
         $inscricao::create($dados);
+        //return view('inscricao-concluida');
 
         return response()->json([
             'mensagem' => "Cadastro Realizado com sucesso",

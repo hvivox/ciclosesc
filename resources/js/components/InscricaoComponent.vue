@@ -5,30 +5,22 @@
                 <div class="col-lg-12">
                     <div class="container">
                         <div class="py-5 text-center">
-                            <img
-                                class="d-block mx-auto mb-4"
-                                src="logo-sesc.png"
-                                alt=""
-                            />
+                            <img class="d-block mx-auto mb-4" src="logo-sesc.png" alt="" />
                             <h2>Ciclo Sesc</h2>
                             <p class="lead">
-                                O ciclismo pode se caracterizar como uma prática
-                                de lazer associada à atividade física, à saúde e
-                                à qualidade de vida; bem como um meio para que
-                                as pessoas possam conhecer as suas cidades, sua
-                                arquitetura, pontos turísticos, patrimônios
-                                históricos e culturais. Este evento se configura
-                                como uma oportunidade de encontro, promovendo a
-                                socialização e integração entre os
-                                participantes, suas famílias e o Sesc.
+                                O ciclismo pode se caracterizar como uma prática de lazer associada
+                                à atividade física, à saúde e à qualidade de vida; bem como um meio
+                                para que as pessoas possam conhecer as suas cidades, sua
+                                arquitetura, pontos turísticos, patrimônios históricos e culturais.
+                                Este evento se configura como uma oportunidade de encontro,
+                                promovendo a socialização e integração entre os participantes, suas
+                                famílias e o Sesc.
                             </p>
                         </div>
 
                         <div class="row">
                             <div class="col-md-4 order-md-2 mb-4">
-                                <h4
-                                    class="d-flex justify-content-between align-items-center mb-3"
-                                >
+                                <h4 class="d-flex justify-content-between align-items-center mb-3">
                                     <span class="text-muted">Informações</span>
                                 </h4>
                                 <ul class="list-group mb-3">
@@ -37,9 +29,7 @@
                                     >
                                         <div>
                                             <h6 class="my-0">Orientações</h6>
-                                            <small class="text-muted"
-                                                >Brief description</small
-                                            >
+                                            <small class="text-muted">Brief description</small>
                                         </div>
                                     </li>
                                     <li
@@ -47,9 +37,7 @@
                                     >
                                         <div>
                                             <h6 class="my-0">Programação</h6>
-                                            <small class="text-muted"
-                                                >Brief description</small
-                                            >
+                                            <small class="text-muted">Brief description</small>
                                         </div>
                                     </li>
                                     <li
@@ -57,9 +45,7 @@
                                     >
                                         <div>
                                             <h6 class="my-0">Percuso</h6>
-                                            <small class="text-muted"
-                                                >Brief description</small
-                                            >
+                                            <small class="text-muted">Brief description</small>
                                         </div>
                                     </li>
                                 </ul>
@@ -74,9 +60,7 @@
                                     <div class="form-group">
                                         <label for="nome">Nome Completo</label>
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLONOME.$invalid
-                                            "
+                                            v-if="v$.entidade.CICLONOME.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
@@ -86,9 +70,7 @@
                                             type="text"
                                             class="form-control form-control-md"
                                             :class="{
-                                                'is-invalid':
-                                                    v$.entidade.CICLONOME
-                                                        .$error,
+                                                'is-invalid': v$.entidade.CICLONOME.$error,
                                             }"
                                             id="nome"
                                             placeholder="Nome"
@@ -110,19 +92,13 @@
                                             type="text"
                                             class="form-control form-control-md"
                                             :class="{
-                                                'is-invalid':
-                                                    v$.entidade.CICLOCPF.$error,
+                                                'is-invalid': v$.entidade.CICLOCPF.$error,
                                             }"
                                             id="cpf"
                                             placeholder="Ex.: 000.000.000-00"
                                         />
-                                        <small
-                                            v-if="v$.entidade.CICLOCPF.$error"
-                                        >
-                                            {{
-                                                v$.entidade.CICLOCPF.$errors[0]
-                                                    .$message
-                                            }}
+                                        <small v-if="v$.entidade.CICLOCPF.$error">
+                                            {{ v$.entidade.CICLOCPF.$errors[0].$message }}
                                         </small>
                                     </div>
 
@@ -131,9 +107,7 @@
                                     <div class="form-group">
                                         <label for="idade">Idade</label>
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOIDADE.$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOIDADE.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
@@ -144,9 +118,7 @@
                                             type="text"
                                             class="form-control form-control-md"
                                             :class="{
-                                                'is-invalid':
-                                                    v$.entidade.CICLOIDADE
-                                                        .$error,
+                                                'is-invalid': v$.entidade.CICLOIDADE.$error,
                                             }"
                                             id="idade"
                                             v-mask="'###'"
@@ -159,21 +131,14 @@
                                     <div class="form-group">
                                         <label>Sexo</label>
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOSEXO.$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOSEXO.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
                                         >
 
-                                        <select
-                                            v-model="entidade.CICLOSEXO"
-                                            class="custom-select"
-                                        >
-                                            <option disabled value="">
-                                                Selecione
-                                            </option>
+                                        <select v-model="entidade.CICLOSEXO" class="custom-select">
+                                            <option disabled value="">Selecione</option>
                                             <option value="M">Masculino</option>
                                             <option value="F">Feminino</option>
                                         </select>
@@ -184,10 +149,7 @@
                                     <div class="form-group">
                                         <label for="telefone">Telefone</label>
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOTELEFONE
-                                                    .$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOTELEFONE.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
@@ -198,9 +160,7 @@
                                             type="text"
                                             class="form-control form-control-md"
                                             :class="{
-                                                'is-invalid':
-                                                    v$.entidade.CICLOTELEFONE
-                                                        .$error,
+                                                'is-invalid': v$.entidade.CICLOTELEFONE.$error,
                                             }"
                                             id="telefone"
                                             placeholder="Ex: (99) 99999-9999"
@@ -212,9 +172,7 @@
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOEMAIL.$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOEMAIL.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
@@ -225,9 +183,7 @@
                                             type="email"
                                             class="form-control form-control-md"
                                             :class="{
-                                                'is-invalid':
-                                                    v$.entidade.CICLOEMAIL
-                                                        .$error,
+                                                'is-invalid': v$.entidade.CICLOEMAIL.$error,
                                             }"
                                             id="email"
                                             placeholder="Email"
@@ -238,21 +194,14 @@
                                     <div class="form-group">
                                         <label>Possui Bicicleta?</label>
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOBIKE.$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOBIKE.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
                                         >
 
-                                        <select
-                                            v-model="entidade.CICLOBIKE"
-                                            class="custom-select"
-                                        >
-                                            <option disabled value="">
-                                                Selecione
-                                            </option>
+                                        <select v-model="entidade.CICLOBIKE" class="custom-select">
+                                            <option disabled value="">Selecione</option>
                                             <option value="S">Sim</option>
                                             <option value="N">Não</option>
                                         </select>
@@ -262,14 +211,10 @@
 
                                     <div class="form-group">
                                         <label
-                                            >Possui equipamentos de segurança
-                                            para ciclismo?</label
+                                            >Possui equipamentos de segurança para ciclismo?</label
                                         >
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOEQUIPAMENTO
-                                                    .$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOEQUIPAMENTO.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
@@ -279,9 +224,7 @@
                                             v-model="entidade.CICLOEQUIPAMENTO"
                                             class="custom-select"
                                         >
-                                            <option disabled value="">
-                                                Selecione
-                                            </option>
+                                            <option disabled value="">Selecione</option>
                                             <option value="S">Sim</option>
                                             <option value="N">Não</option>
                                         </select>
@@ -291,10 +234,7 @@
                                     <div class="form-group">
                                         <label>Pratica Atividade Física?</label>
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOESPORTE
-                                                    .$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOESPORTE.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
@@ -304,9 +244,7 @@
                                             v-model="entidade.CICLOESPORTE"
                                             class="custom-select"
                                         >
-                                            <option disabled value="">
-                                                Selecione
-                                            </option>
+                                            <option disabled value="">Selecione</option>
                                             <option value="S">Sim</option>
                                             <option value="N">Não</option>
                                         </select>
@@ -314,15 +252,9 @@
 
                                     <!-- JA PARTICIPOU DO CICLO ----------------------------------------------------------------------------- -->
                                     <div class="form-group">
-                                        <label
-                                            >Já participou de alguma edição do
-                                            Ciclo Sesc?</label
-                                        >
+                                        <label>Já participou de alguma edição do Ciclo Sesc?</label>
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOPARTICIPOU
-                                                    .$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOPARTICIPOU.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
@@ -332,9 +264,7 @@
                                             v-model="entidade.CICLOPARTICIPOU"
                                             class="custom-select"
                                         >
-                                            <option disabled value="">
-                                                Selecione
-                                            </option>
+                                            <option disabled value="">Selecione</option>
                                             <option value="S">Sim</option>
                                             <option value="N">Não</option>
                                         </select>
@@ -342,15 +272,9 @@
 
                                     <!-- COMO FICOU SABENDO ----------------------------------------------------------------------------- -->
                                     <div class="form-group">
-                                        <label
-                                            >Como ficou sabendo sobre o
-                                            evento?</label
-                                        >
+                                        <label>Como ficou sabendo sobre o evento?</label>
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOSABENDO
-                                                    .$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOSABENDO.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
@@ -360,18 +284,10 @@
                                             v-model="entidade.CICLOSABENDO"
                                             class="custom-select"
                                         >
-                                            <option disabled value="">
-                                                Selecione
-                                            </option>
-                                            <option value="PS">
-                                                Portal do Sesc
-                                            </option>
-                                            <option value="RS">
-                                                Redes Sociais
-                                            </option>
-                                            <option value="CA">
-                                                Central de Atendimento Sesc
-                                            </option>
+                                            <option disabled value="">Selecione</option>
+                                            <option value="PS">Portal do Sesc</option>
+                                            <option value="RS">Redes Sociais</option>
+                                            <option value="CA">Central de Atendimento Sesc</option>
                                             <option value="O">Outros</option>
                                         </select>
                                     </div>
@@ -379,26 +295,18 @@
                                     <!-- DECLARA APTO ----------------------------------------------------------------------------- -->
                                     <div class="form-group">
                                         <label
-                                            >Declara está apto (a) fisicamente
-                                            para participação no Passeio
-                                            Ciclístico?</label
+                                            >Declara está apto (a) fisicamente para participação no
+                                            Passeio Ciclístico?</label
                                         >
                                         <span
-                                            v-if="
-                                                v$.entidade.CICLOAPTO.$invalid
-                                            "
+                                            v-if="v$.entidade.CICLOAPTO.$invalid"
                                             style="color: red"
                                         >
                                             *Obrigatório</span
                                         >
 
-                                        <select
-                                            v-model="entidade.CICLOAPTO"
-                                            class="custom-select"
-                                        >
-                                            <option disabled value="">
-                                                Selecione
-                                            </option>
+                                        <select v-model="entidade.CICLOAPTO" class="custom-select">
+                                            <option disabled value="">Selecione</option>
                                             <option value="S">Sim</option>
                                             <option value="N">Não</option>
                                         </select>
@@ -407,20 +315,12 @@
                                     <hr class="mb-4" />
                                     <button
                                         class="btn btn-primary btn-lg btn-block"
-                                        v-on:click.stop.prevent="
-                                            salvarAtualizar()
-                                        "
-                                        :disabled="
-                                            isTemAlgumCampoInvalidoNoFormulario ||
-                                            isloading
-                                        "
+                                        v-on:click.stop.prevent="salvarAtualizar()"
+                                        :disabled="isTemAlgumCampoInvalidoNoFormulario"
                                         type="button"
                                     >
                                         ENVIAR
-                                        <i
-                                            v-if="isloading"
-                                            class="fa fa-spinner fa-spin fa-fw"
-                                        ></i>
+                                        <i v-if="isloading" class="fa fa-spinner fa-spin fa-fw"></i>
                                     </button>
                                 </form>
 
@@ -428,9 +328,7 @@
                             </div>
                         </div>
 
-                        <footer
-                            class="my-5 pt-5 text-muted text-center text-small"
-                        >
+                        <footer class="my-5 pt-5 text-muted text-center text-small">
                             <p class="mb-1">© 2022-2022 Sesc/AM</p>
                         </footer>
                     </div>
@@ -485,14 +383,15 @@ export default {
             this.v$.$validate();
             if (!this.v$.$error) {
                 this.isloading = true;
-                let url = "/inscricao";
 
+                let url = APP_URL + "/api/inscricao";
                 axios
                     .post(url, this.entidade)
-                    .then((json) => {
+                    .then((response) => {
                         //sucesso
 
-                        location.href = "inscricao-concluida";
+                        location.href = APP_URL + "/inscricao-concluida";
+                        alert("Pré-inscrição concluída com sucesso!");
                         //this.loading = true;
                         //next({ path: '/home' });
                     })
@@ -505,15 +404,12 @@ export default {
                     })
                     .finally(() => {
                         this.isloading = false;
+                        this.entidade = {};
                     });
             } else {
                 alert("Campos obrigatórios pendentes");
             }
             //this.v$.$touch();
-        },
-
-        registrar() {
-            alert("gravando cadastro");
         },
     },
 
@@ -522,14 +418,8 @@ export default {
             entidade: {
                 CICLONOME: { required },
                 CICLOCPF: {
-                    required: helpers.withMessage(
-                        "*Campo Obrigatório!",
-                        required
-                    ),
-                    validarCPF: helpers.withMessage(
-                        "*CPF inválido!",
-                        validarCPF
-                    ),
+                    required: helpers.withMessage("*Campo Obrigatório!", required),
+                    validarCPF: helpers.withMessage("*CPF inválido!", validarCPF),
                 },
 
                 CICLOIDADE: { required },
