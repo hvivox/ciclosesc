@@ -24,14 +24,18 @@ Route::get('/', function () {
 
 Route::get('/inscricao-concluida', function () {
     return view('inscricao-concluida');
+})->name('inscricao-concluida');
+
+
+
+/*Route::middleware('web')->group(function () {
+
+
+    Route::get('inscricao', [App\Http\Controllers\InscricaoController::class, 'lista'])
+        ->name('lista');
+
+
+    Route::post('inscricao', [App\Http\Controllers\InscricaoController::class, 'salvar'])
+        ->name('salvar');
 });
-
-
-/*
-Route::get('inscricao', [App\Http\Controllers\InscricaoController::class, 'lista'])
-    ->name('lista');
-
-
-Route::post('inscricao', [App\Http\Controllers\InscricaoController::class, 'salvar'])
-    ->name('salvar');
 */

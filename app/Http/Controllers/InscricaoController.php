@@ -29,11 +29,14 @@ class InscricaoController extends Controller
 
 
 
-
-
+    public function inscricaoConcluida()
+    {
+        return view('inscricao-concluida');
+    }
 
     public function salvar(Request $request)
     {
+
         // Validate the request...
         $inscricao = new Inscricao();
         $dados = $request->input();
@@ -48,7 +51,9 @@ class InscricaoController extends Controller
 
         $inscricao::create($dados);
         //return view('inscricao-concluida');
-
+        //return redirect()->route('inscricao-concluida');
+        //return redirect()->action([InscricaoController::class, 'inscricaoConcluida'])->withStatus('200');
+        //->withStatus('200');
         return response()->json([
             'mensagem' => "Cadastro Realizado com sucesso",
             'status' => "sucesso"

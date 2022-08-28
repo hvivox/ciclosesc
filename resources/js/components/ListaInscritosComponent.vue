@@ -78,7 +78,7 @@ export default {
     },
     methods: {
         carregarLista() {
-            let url = APP_URL + "/api/inscricao";
+            let url = APP_URL + "/api/adminevento/inscricao";
 
             axios
                 // .get(" https://jsonplaceholder.typicode.com/posts ")

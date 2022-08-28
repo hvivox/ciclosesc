@@ -4,7 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('inscricao', [App\Http\Controllers\InscricaoController::class, 'lista'])
+//nome da rota diferenciada para evitar problemas
+Route::get('adminevento/inscricao', [App\Http\Controllers\InscricaoController::class, 'lista'])
     ->name('lista');
 
 

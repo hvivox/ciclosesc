@@ -18,6 +18,9 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+    #  RewriteCond %{REQUEST_URI} !^/public/
+    # RewriteRule ^(.*)$ /public/$1 [L,QSA]
     # RewriteRule ^ /ciclosesc/public/index.php [L]
     # RewriteRule ^(.*)$ /ciclosesc/public/index.php [L]
+    # RewriteRule ^ciclosesc/public/?([A-Za-z0-9-]+)?/$ /ciclosesc/$1 [NC,L]
 </IfModule>

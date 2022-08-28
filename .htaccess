@@ -1,0 +1,24 @@
+# <IfModule mod_rewrite.c>
+#     <IfModule mod_negotiation.c>
+#         Options -MultiViews -Indexes
+#     </IfModule>
+
+#     RewriteEngine On
+#     RewriteCond %{REQUEST_URI} !^/public/
+#     RewriteRule ^(.*)$ /public/$1 [L,QSA]
+# </IfModule>
+
+
+
+RewriteEngine On
+# RewriteCond %{REQUEST_URI} !^/public/
+# RewriteRule ^(.*)$ /ciclosesc/public/$1 [L,QSA]
+# RewriteRule ^/ciclosesc/public/?([A-Za-z0-9-]+)?$ /ciclosesc/$1 [NC,L]
+# RewriteRule ^(.*)$ /ciclosesc/public/index.php?url=$1 [QSA,L]
+# RewriteCond %{HTTP_HOST} ^ciclosesc$ [NC,OR]
+# RewriteCond %{HTTP_HOST} ^ciclosesc$
+# RewriteCond %{REQUEST_URI} !ciclosesc/public/
+# RewriteRule (.*) /ciclosesc/public/$1 [L]
+RewriteRule ^(.*)$ /ciclosesc/public [QSA,L]
+
+

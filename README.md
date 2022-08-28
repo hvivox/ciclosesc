@@ -20,7 +20,7 @@ Sistema de cadastro de inscrições do maior evento ciclistico da região norte
 * npm run watch 
 * npm run build (este comando depende do npm run watch rodando)
 * desabilitar APP_DEBUG=true do .env
-
+* Rodar o comando php artisan config:clear sempre ao alterar o env
 
 
 ## Executar a aplicação em desenvolvimento
