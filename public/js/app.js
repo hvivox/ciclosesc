@@ -22187,7 +22187,7 @@ __webpack_require__.r(__webpack_exports__);
           _this.isloading = false;
         });
       } else {
-        alert("FORM COM FALHA");
+        alert("Campos obrigatórios pendentes");
       } //this.v$.$touch();
 
     },
