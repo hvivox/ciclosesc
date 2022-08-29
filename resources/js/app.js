@@ -9,8 +9,8 @@ import { createApp } from 'vue';
 //import { Axios } from 'axios';
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
-
+//import '@fortawesome/fontawesome-free/css/fontawesome.min.css'
+import 'fontawesome-4.7/css/font-awesome.min.css'
 
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
