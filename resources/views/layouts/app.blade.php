@@ -19,12 +19,12 @@
 
 <body>
     <div id="app">
-
         <div class="container">
-            @yield('content')
+            <router-view></router-view>
         </div>
-
-
+        {{-- <div class="container">
+            @yield('content')
+        </div> --}}
     </div>
 </body>
 

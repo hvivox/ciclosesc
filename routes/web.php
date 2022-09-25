@@ -22,6 +22,12 @@ Route::get('/', function () {
     return view('inscricao');
 });
 
+
+Route::get('{any?}', function () {
+    return view('inscricao');
+})->where("any", ".*");
+
+
 Route::get('/inscricao-concluida', function () {
     return view('inscricao-concluida');
 })->name('inscricao-concluida');

@@ -322,6 +322,14 @@
                                         ENVIAR
                                         <i v-if="isloading" class="fa fa-spinner fa-spin fa-fw"></i>
                                     </button>
+
+                                    <button
+                                        class="btn btn-primary btn-lg btn-block"
+                                        v-on:click.stop.prevent="botaoRota()"
+                                        type="button"
+                                    >
+                                        BOTAO TESTE
+                                    </button>
                                 </form>
 
                                 <!-- ########################################################################-->
@@ -379,6 +387,12 @@ export default {
         },
     },
     methods: {
+        botaoRota() {
+            //this.$router.push("/inscricaoConcluida");
+            this.$router.push({ name: "inscricaoConcluida" });
+            console.log("chamou o botao");
+        },
+
         salvarAtualizar() {
             this.v$.$validate();
             if (!this.v$.$error) {
@@ -389,9 +403,10 @@ export default {
                     .post(url, this.entidade)
                     .then((response) => {
                         //sucesso
+                        this.$router.push({ name: "inscricaoConcluida" });
+                        //location.href = APP_URL + "/inscricao-concluida";
+                        //alert("Pré-inscrição concluída com sucesso!");
 
-                        location.href = APP_URL + "/inscricao-concluida";
-                        alert("Pré-inscrição concluída com sucesso!");
                         //this.loading = true;
                         //next({ path: '/home' });
                     })
